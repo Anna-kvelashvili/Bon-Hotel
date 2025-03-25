@@ -1,4 +1,8 @@
-<?php include 'data.php'; ?>
+<?php
+include 'functions.php'; 
+$rooms = getRooms();   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +45,9 @@
             <div class="rooms-gallery">
                 <?php foreach ($rooms as $room): ?>
                     <div class="rooms-card">
-                        <img src="<?= $room['img']; ?>" alt="<?= $room['title']; ?>" />
+                        <img src="<?= htmlspecialchars($room['img']); ?>" alt="<?= htmlspecialchars($room['title']); ?>" />
                         <div class="cards-content">
-                            <h3 class="card-title"><?= $room['title']; ?></h3>
+                            <h3 class="card-title"><?= htmlspecialchars($room['title']); ?></h3>
                             <a href="#" class="button button-small">Check Rates</a>
                         </div>
                     </div>
